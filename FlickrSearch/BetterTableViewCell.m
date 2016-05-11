@@ -9,7 +9,9 @@
 #import "BetterTableViewCell.h"
 #import "UIKit/UIKit.h"
 
-@implementation BetterTableViewCell
+@implementation BetterTableViewCell {
+  SEL setImg;
+}
 
 - (IBAction)clickedRemoveFromFeed:(UIButton *)sender {
   
@@ -20,11 +22,24 @@
   
 }
 
+-(void)fadeInElements {
+  
+  [UIView animateWithDuration:1.5 animations:^{
+    self.viewBaseline.alpha = 1;
+  }];
+}
+
+-(void)setChildImage :(UIImage*)img {
+  [self.imgDownloadedPhoto setImage:img];
+}
+
+
+
 
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *) reuseIdentifier {
-
   
+  SEL setImg = @selector(setImage:);
   self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
   self.separatorInset = UIEdgeInsetsZero;
   

@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AsyncImageView.h"
 
-@interface BetterTableViewCell : UITableViewCell
+@interface BetterTableViewCell : UITableViewCell {
+  
+}
 # pragma mark -  outlets
 @property (weak, nonatomic) IBOutlet UILabel *lblPostedBy;
 @property (weak, nonatomic) IBOutlet UILabel *lblPhotoAge;
@@ -18,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnLovePhoto;
 @property (weak, nonatomic) IBOutlet UIView *viewBaseline;
 @property (weak, nonatomic) IBOutlet AsyncImageView *imgBuddyIcon;
+
+
 
 @property (weak, nonatomic) IBOutlet UIStackView *stackButtons;
 

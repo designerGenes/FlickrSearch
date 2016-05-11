@@ -32,7 +32,7 @@
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="sEv-nK-6BW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOC-84-Of5">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOC-84-Of5">
                                         <rect key="frame" x="299" y="16" width="60" height="32"/>
                                         <fontDescription key="fontDescription" name="Bebas" family="Bebas" pointSize="15"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
@@ -54,7 +54,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VnZ-Pc-5i3">
                                 <rect key="frame" x="0.0" y="600" width="375" height="67"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOd-tm-lCD">
+                                    <button opaque="NO" tag="1" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOd-tm-lCD">
                                         <rect key="frame" x="285" y="14" width="72" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="5Ap-kJ-Tf9"/>
@@ -82,7 +82,7 @@
                                             <action selector="typedInField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Rt2-DJ-0yL"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" tag="1" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVS-y6-CIi">
+                                    <button opaque="NO" tag="1" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVS-y6-CIi">
                                         <rect key="frame" x="196" y="14" width="65" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="A8z-bQ-K1n"/>
@@ -130,13 +130,13 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBk-6y-upY">
                                                     <rect key="frame" x="0.0" y="330" width="375" height="55"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="posted     by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0O0-2U-sYo">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="posted     by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0O0-2U-sYo">
                                                             <rect key="frame" x="12" y="5" width="79" height="23"/>
                                                             <fontDescription key="fontDescription" name="Bebas" family="Bebas" pointSize="17"/>
                                                             <color key="textColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="days     ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z94-1f-GH9">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days     ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z94-1f-GH9">
                                                             <rect key="frame" x="12" y="30" width="54" height="18"/>
                                                             <fontDescription key="fontDescription" name="Bebas" family="Bebas" pointSize="13"/>
                                                             <color key="textColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>

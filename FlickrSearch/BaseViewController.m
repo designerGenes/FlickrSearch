@@ -85,21 +85,6 @@
   
 }
 
--(void) conjureActivityIndicator :(UIColor*)tint {
-  if (indicatorView == nil) {
-    indicatorView = [[UIActivityIndicatorView alloc] init];
-    indicatorView.alpha = 0;
-    [self.view addSubview:indicatorView];
-    indicatorView.center = CGPointMake(self.view.center.x, self.view.center.y - 45);
-    indicatorView.color = tint;
-    indicatorView.transform = CGAffineTransformMakeScale(3, 3);
-  }
-  indicatorView.startAnimating;
-  [UIView animateWithDuration:2.35 animations:^{
-    indicatorView.alpha = 1;
-  }];
-}
-
 -(void) flashThroughLevelOfText :(NSArray *)remainingText {
   static int *counter;
   static UILabel *lblDisplayed;
@@ -192,8 +177,7 @@
   } completion:^(BOOL finished) {
   
     
-      [self conjureActivityIndicator:[UIColor flatRedColor]];
-//      [self flashThroughLevelOfText:waitMessages];  // should work recursively
+
     
   }];
   
@@ -213,22 +197,10 @@
   [self setupFetchButtons];
   self.btnSettings.transform = CGAffineTransformMakeTranslation(self.btnSettings.frame.size.width + 16, 0);
   
-  self.txtFieldFindTag.text = @"goldfish";
+  self.txtFieldFindTag.placeholder = @"tag";
 }
 
 
-
--(void) hideObtrusiveViews {
-  indicatorView.stopAnimating;
-  [UIView animateWithDuration:0.35 animations:^{
-    indicatorView.alpha = 0;
-    indicatorView.transform = CGAffineTransformMakeScale(3, 3);
-  } completion:^(BOOL finished) {
-    [indicatorView removeFromSuperview];
-  }];
-  
-  
-}
 
 # pragma mark - UITextFieldDelegate functions
 -(bool)textFieldShouldReturn:(UITextField *)textField {
@@ -259,17 +231,6 @@
 
 # pragma mark - UITableViewDelegate functions
 -(void)reloadTable :(NSArray *)data {  // in case we want to call methods beforehand
-  if (indicatorView) {
-    [UIView animateWithDuration:0.4 animations:^{
-      indicatorView.alpha = 0;
-    } completion:^(BOOL finished) {
-      indicatorView.removeFromSuperview;
-    }];
-    
-  }
-  
-  NSLog(@"Made it to reload");
-  NSLog(@"%lu", (unsigned long)data.count);
   if(data) {
     dataForTable = [NSMutableArray arrayWithArray:data.mutableCopy];
   }
@@ -291,6 +252,10 @@
   return count;
 }
 
+-(void)doNothing {
+  
+}
+
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   FlickrKit *fk = [FlickrKit sharedFlickrKit];
   NSString *identifier = @"PhotoCell";
@@ -304,17 +269,22 @@
   
   
     // cell image
+  AsyncImageLoader *imgLoader = [[AsyncImageLoader alloc] init];
+  
+//  [imgLoader loadImageWithURL:currentPhoto.photoURL target:cell.imgDownloadedPhoto action:@selector(setImage:)];
+  
     [cell.imgDownloadedPhoto setImageURL:currentPhoto.photoURL];
+
   
   
     // photo date
   
     double dateInterval = [currentPhoto.photoTakenDate doubleValue];
     NSDate *finalDate = [NSDate dateWithTimeIntervalSince1970:dateInterval];
+  
+  
     cell.lblPhotoAge.text = [NSString stringWithFormat:@"posted %@",[finalDate timeAgoSinceNow]];
   
-  
-    // user buddy icon
   
   
     // user screen name
@@ -326,29 +296,6 @@
     NSURL *imageURL = [fk buddyIconURLForUser:details[0]];
     
     [cell.imgBuddyIcon setImageURL:imageURL];
-    //[AIL loadImageWithURL:imageURL];
-    
-    
-    
-    
-//    UIImage *myImage = [self.model getBuddyIconWith:details];
-//    dispatch_queue_t bgQ = [AppDelegate getAppDelegate].GlobalBackgroundQueue;
-//    dispatch_async(bgQ, ^{
-////      NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-////      UIImage *image = [UIImage imageWithData:imageData];
-//
-//      [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:imageURL] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//        if (!connectionError) {
-//          UIImage *img = [[UIImage alloc] initWithData:data];
-//          
-//            cell.imgBuddyIcon.image = img;
-//          
-//        }else{
-//          NSLog(@"%@",connectionError);
-//        }
-//      }];
-    
-//    });
     
   }];
   
