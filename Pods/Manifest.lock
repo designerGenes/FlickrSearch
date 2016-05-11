@@ -1,0 +1,18 @@
+PODS:
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
+  - DateTools (1.7.0)
+  - FlickrKit (1.0.7)
+
+DEPENDENCIES:
+  - ChameleonFramework
+  - DateTools
+  - FlickrKit
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  FlickrKit: 907da468d679233a27d66dd88c6dcd024074b0f0
+
+COCOAPODS: 0.39.0
